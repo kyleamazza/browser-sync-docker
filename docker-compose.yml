@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  web:
+    build: .
+    volumes:
+      - "./public:/usr/src/app"
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    command: ["browser-sync", "start", "--watch", "/**/*", "--server", "/usr/src/app"]
